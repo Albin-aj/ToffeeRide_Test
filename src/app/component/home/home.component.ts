@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.allEmployees = this.empService.getAllEmployees();
-    console.log(this.search);
     if (this.search == undefined) {
       this.allEmployees.subscribe((res) => (this.EmployeesList = res));
     }

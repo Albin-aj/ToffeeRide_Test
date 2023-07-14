@@ -1,0 +1,107 @@
+<section class="lg:h-[calc(100vh-80px)] font-inter py-8 md:py-10 bg-white text-lg">
+  <form [formGroup]="userForm" (submit)="submit()" class="">
+    <div
+      class="flex lg:flex-row flex-col lg:w-8/12 w-11/12 bg-white rounded-xl shadow-lg p-1 md:p-5 overflow-hidden mx-auto">
+      <div class="lg:w-9/12 w-full md:px-12 py-5 p-0 md:py-6 flex justify-center items-center">
+        <div
+          class="flex sm:gap-4 gap-1 flex-col justify-center p-0 md:p-5 bg-white rounded-md   text-black/80 w-[100%]">
+          <h2 class="text-3xl text-center mb-4 text-[#7ca51c] font-semibold">Personal Data</h2>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input formControlName="fristName"
+                class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name="" id=""
+                placeholder="Frist Name">
+              <small class="text-red-500"
+                *ngIf="fc['fristName'].errors && (fc['fristName'].touched || fc['fristName'].dirty)">*Frist Name is
+                required!</small>
+            </div>
+            <div class="w-1/2">
+              <input formControlName="lastName"
+                class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
+                placeholder="Last Name">
+              <small class="text-red-500"
+                *ngIf="fc['lastName'].errors && (fc['lastName'].touched || fc['lastName'].dirty)">*Last Name is
+                required!</small>
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="Gender">
+            </div>
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
+                placeholder="Date of Birth">
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input formControlName="phone" class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400"
+                type="number" name="" id="" placeholder="Phone Number">
+              <small class="text-red-500"
+                *ngIf="fc['phone'].errors && (fc['phone'].touched || fc['phone'].dirty)">*Phone number is
+                required!</small>
+            </div>
+            <div class="w-1/2">
+              <input formControlName="email" class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400"
+                type="email" placeholder="Email">
+              <small class="text-red-500"
+                *ngIf="fc['email'].errors && (fc['email'].touched || fc['email'].dirty)">*email is required!</small>
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-full">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="Address Line1">
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-full">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="Address Line2">
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="Street">
+            </div>
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
+                placeholder="Distric">
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="State">
+            </div>
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
+                placeholder="Country">
+            </div>
+          </div>
+          <div class="flex w-[100%] sm:gap-4 gap-2">
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name=""
+                id="" placeholder="Pincode">
+            </div>
+            <div class="w-1/2">
+              <input class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
+                placeholder="Date of Joing">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="lg:w-3/12 w-full flex bg-cover items-center justify-center py-5 bg-center bg-no-repeat text-white">
+        <div class="p-2 md:p-5 w-[80%] h-full flex flex-col justify-center items-center py-12 rounded-md">
+          <img class="w-52 h-52 rounded-full object-cover" src="../../../assets/profile.png" alt="">
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center mt-4"><button type="submit" [disabled]="userForm.invalid"
+        class="bg-blue-900 text-white px-10 p-4 hover:bg-blue-700  rounded-md disabled:bg-gray-500">Submit</button></h1>
+  </form>
+</section>

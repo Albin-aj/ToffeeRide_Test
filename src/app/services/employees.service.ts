@@ -14,4 +14,15 @@ export class EmployeesService {
   getAllEmployees():Observable<Employees[]>{
    return this.http.get<Employees[]>(environment.BASE_URL)
   }
+
+
+  getOneEmployee(id:number):Observable<Employees>{
+    return this.http.get<Employees>(`${environment.SINGLE_EMP_URL}/${id}`)
+  }
+
+  addNewEmployee(){
+
+  }
+
+
 }

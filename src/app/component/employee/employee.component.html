@@ -1,0 +1,76 @@
+<section class="lg:h-[calc(100vh-80px)] font-inter py-5 md:py-10 bg-cover bg-no-repeat text-lg" style="background-image: url(../../../assets/bg5.jpg)">
+  <div class="">
+    <div class="flex lg:flex-row flex-col lg:w-8/12 w-11/12 bg-white rounded-xl shadow-lg p-5 overflow-hidden mx-auto">
+      <div class="lg:w-4/12 w-full flex bg-cover items-center justify-center py-5 bg-center bg-no-repeat text-white">
+        <div class="p-2 md:p-5 w-[80%] h-full flex flex-col justify-center items-center py-12 rounded-md shadow-xl">
+          <img class="w-52 h-52 rounded-full object-cover" src="../../../assets/profile.png" alt="">
+          <h1 class="text-2xl mb-3 mt-1 border-b-2 text-[#7ca51c]">{{empDeatials.empFirstName}} {{empDeatials.empLastName}}</h1>
+          <div class="flex w-full flex-col items-start mt-4 gap-2">
+            <div class="flex flex-col w-full bg-slate-50 text-black/70 px-2 p-1 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Employer Id</span>
+              <span>empId:{{empDeatials.id}}</span>
+            </div>
+            <div class="flex flex-col w-full bg-slate-50 text-black/80 px-2 p-1 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Place</span>
+              <span>{{empDeatials.empHomeAddrStreet}}</span>
+            </div>
+            <div class="flex flex-col w-full bg-slate-50 text-black/80 px-2 p-1 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Date of Joining</span>
+              <span>{{empDeatials.empDateOfJoining}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="lg:w-8/12 w-full p-2 md:px-12 py-5 md:py-6 flex justify-center items-center">
+        <div class="flex gap-4 flex-col justify-center p-5 bg-white rounded-md shadow-xl text-black/80 py-12 w-[100%]">
+          <h2 class="text-3xl text-center mb-4 text-[#7ca51c] font-semibold">Personal Data</h2>
+          <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+            <span class=" text-sm -mb-1 text-black/60">Full Name</span>
+            <span>{{empDeatials.empFirstName}} {{empDeatials.empLastName}}</span>
+          </div>
+          <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+            <span class=" text-sm -mb-1 text-black/60">House Name</span>
+            <span>{{empDeatials.empHomeAddrLine1}}</span>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Date of Birth</span>
+              <span>{{empDeatials.empDateOfBirth}}</span>
+            </div>
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Gender</span>
+              <span>{{empDeatials.empGender}}</span>
+            </div>
+          </div>
+          <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+            <span class=" text-sm -mb-1 text-black/60">Address</span>
+            <span>{{empDeatials.empHomeAddrLine2}}</span>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Country</span>
+              <span>{{empDeatials.empHomeAddrCountry}}</span>
+            </div>
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">State</span>
+              <span>{{empDeatials.empHomeAddrState}}</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Distric</span>
+              <span>{{empDeatials.empHomeAddrDistrict}}</span>
+            </div>
+            <div class="flex flex-col w-full bg-slate-50  px-2 p-2 rounded-lg">
+              <span class=" text-sm -mb-1 text-black/60">Pincode</span>
+              <span>{{empDeatials.empHomeAddrPinCode}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h1 class="text-center mt-10"><button routerLink="/" class="bg-blue-900 text-white px-8 p-4 hover:bg-blue-800  rounded-md">Back to home</button></h1>
+</section>

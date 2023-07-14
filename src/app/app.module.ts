@@ -8,12 +8,16 @@ import { HeaderComponent } from './component/header/header.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
+import { EmployeeComponent } from './component/employee/employee.component';
+import { AddNewComponent } from './component/add-new/add-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
+    EmployeeComponent,
+    AddNewComponent,
   ],
   imports: [
     BrowserModule,
