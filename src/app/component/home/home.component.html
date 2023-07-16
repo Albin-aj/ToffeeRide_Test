@@ -1,25 +1,27 @@
-<div class="font-inter bg-cover bg-no-repeat h-[calc(100vh-80px)] text-lg" style="background-image: url(../../../assets/bg1.jpeg);">
-  <div class="md:px-20  p-5 flex items-center justify-center flex-col h-full mx-auto ">
+<div class="font-inter bg-cover bg-no-repeat h-[calc(100vh-80px)] text-lg"
+ style="background-image: url(../../../assets/final.jpg);" >
+  <div class="container p-5 flex items-center justify-center flex-col h-full mx-auto ">
 
-          <!-- -------------Search Field-------------- -->
+    <!-- -------------Search Field-------------- -->
     <div class="relative   w-[90%] md:w-[50%] mt-2 ">
       <input [(ngModel)]="searchString" (ngModelChange)="$searchInputs.next($event)"
-        class="relative w-full p-3 z-40 border bg-transparent placeholder:text-white text-white overflow-hidden  backdrop-blur-md outline-none  border-white rounded-full"
+        class="relative w-full p-3 z-40 border outline-none bg-transparent text-white backdrop-blur-md ring-1 ring-white placeholder-white overflow-hidden rounded-full"
         type="text" placeholder="Search employees...">
-      <div class="absolute z-[100] right-5 top-[10px]">
-        <i class="fa-solid fa-magnifying-glass text-2xl text-white"></i>
+      <div class="absolute z-[100] right-7 top-[10px]">
+        <i class="fa-solid text-white fa-magnifying-glass text-2xl"></i>
       </div>
     </div>
 
-           <!-- ---------------Hero Part----------------->
+    <!-- ---------------Hero Part----------------->
     <div *ngIf="allEmployees"
-      class="flex  overflow-y-scroll mt-5 md:mt-8 flex-wrap w-[100%] h-[100%] justify-center items-center gap-2 md:gap-y-6 pt-1 md:gap-5">
+      class="flex  overflow-y-scroll mt-5 md:mt-8 flex-wrap   w-[100%] h-[100%] justify-center items-center gap-2 md:gap-y-6 pt-1 md:gap-10">
       <div *ngFor="let emp of EmployeesList" [routerLink]="['/Emp',emp.id]"
-        class="w-[19rem] hover:bg-black/20 bg-white/10 backdrop-blur-sm text-white cursor-pointer shadow-lg  h-[23rem] rounded-lg flex flex-col justify-center items-center">
-        <div class="bg-white hover:bg-slate-50 w-full justify-center flex rounded-t-lg flex-col gap-4 items-center py-3">
-            <img class="w-32 h-32 hover:scale-105 object-cover rounded-full" src="../../../assets/profile.png" alt="Pic">
+        class="w-[19rem] backdrop-blur-lg hover:font-semibold bg-black/60 hover:bg-black text-white cursor-pointer shadow-lg  h-[23rem] rounded-lg flex flex-col justify-center items-center">
+        <div
+          class="bg-white w-full justify-center flex rounded-t-lg flex-col gap-4 items-center py-3">
+          <img class="w-32 h-32 hover:scale-105 object-cover rounded-full" src="../../../assets/profile.png" alt="Pic">
           <div class="flex items-center flex-col justify-center">
-            <p class="text-2xl text-[#7ca51c] font-medium">{{emp.empFirstName}}</p>
+            <p class="text-2xl text-[#536f12] font-medium">{{emp.empFirstName}}</p>
             <small class="text-blue-800">EmpId:{{emp.id}}</small>
           </div>
         </div>
@@ -39,9 +41,10 @@
         </div>
       </div>
     </div>
-    <button routerLink="/add" class=" hover:bg-white shadow-2xl bg-slate-50 text-4xl p-1 z-40 flex flex-col justify-center items-center absolute right-20 rounded-md bottom-16">
-      <i class="fa-solid fa-plus text-green-600 hover:scale-110"></i>
-      <small class="text-xs text-green-800">Add new Employee</small>
+    <button routerLink="/add"
+      class="border-2 border-yellow-600 hover:bg-white text-green-600 shadow-2xl bg-slate-50 text-4xl p-2 sm:p-5 z-40 flex flex-col
+      justify-center items-center absolute left-[3%] sm:left-auto sm:right-[10%] rounded-full bottom-[4%]">
+      <i class="fa-solid fa-plus hover:scale-125"></i>
     </button>
   </div>
 </div>

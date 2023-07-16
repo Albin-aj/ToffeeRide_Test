@@ -1,13 +1,14 @@
 <section class=" font-inter py-4 bg-white text-lg">
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="">
     <div
-      class="flex lg:flex-row flex-col lg:w-8/12 w-11/12 bg-white rounded-xl  mt-0 shadow-lg p-1 md:p-5 overflow-hidden mx-auto">
-      <div class="lg:w-9/12 w-full py-5 p-0 md:py-6 flex justify-center items-center">
+      class="flex lg:flex-row flex-col lg:w-8/12 w-11/12 bg-white rounded-xl mt-0 shadow-lg p-1 md:p-5 overflow-hidden mx-auto">
+      <div class="lg:w-9/12 w-full p-0 md:py-6 flex justify-center items-center">
         <div
-          class="flex sm:gap-6 gap-1 flex-col justify-center p-0 md:p-5 bg-white rounded-md   text-black/80 w-[100%]">
+          class="flex sm:gap-3 gap-1 flex-col justify-center p-0 md:p-5 bg-white rounded-md   text-black/80 w-[100%]">
           <h2 class="text-3xl text-center mb-4 text-[#7ca51c] font-semibold">Personal Data</h2>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-1/2">
+              <label class="text-base" for="">Frist name</label>
               <input formControlName="fristName"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name="" id=""
                 placeholder="Frist Name">
@@ -16,6 +17,7 @@
                 required!</small>
             </div>
             <div class="w-1/2">
+              <label class="text-base" for="">Last name</label>
               <input formControlName="lastName"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
                 placeholder="Last Name">
@@ -25,51 +27,53 @@
             </div>
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
-            <div class="w-1/2 flex border border-zinc-400 bg-slate-50 rounded-md gap-3 p-2 items-center">
+            <div class="w-1/2">
               <label for="">Gender:</label>
-              <div class="flex justify-center items-center gap-1">
-                <input formControlName="gender" type="radio" value="MALE" name="gender">
-                <label for="">M</label>
+              <div class="w-full flex border border-zinc-400 bg-slate-50 rounded-md gap-3 p-2 items-center">
+                <div class="flex justify-center items-center gap-1">
+                  <input formControlName="gender" type="radio" value="MALE" name="gender">
+                  <label for="">M</label>
+                </div>
+                <div class="flex justify-center items-center gap-1">
+                  <input formControlName="gender" value="FEMALE" type="radio" name="gender">
+                  <label for="">F</label>
+                </div>
+                <div class="flex overflow-hidden justify-center items-center gap-1">
+                  <input formControlName="gender" type="radio" value="OTHER" name="gender">
+                  <label for="">Others</label>
+                </div>
+                <small class="text-red-500"
+                  *ngIf="fc['gender'].errors && (fc['gender'].touched || fc['gender'].dirty)">*Please select one, it is
+                  required!</small>
               </div>
-              <div class="flex justify-center items-center gap-1">
-                <input formControlName="gender" value="FEMALE" type="radio" name="gender">
-                <label for="">F</label>
-              </div>
-              <div class="flex overflow-hidden justify-center items-center gap-1">
-                <input formControlName="gender" type="radio" value="OTHER" name="gender">
-                <label for="">Others</label>
-              </div>
-              <small class="text-red-500"
-                *ngIf="fc['gender'].errors && (fc['gender'].touched || fc['gender'].dirty)">*Please select one, it is
-                required!</small>
-
             </div>
             <div class="w-1/2">
+            <label class="text-base" for="">Date of birth</label>
               <input formControlName="dateOfBirth"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
                 placeholder="Date of Birth">
               <div *ngIf="fc['dateOfBirth'].errors && (fc['dateOfBirth'].touched ||  fc['dateOfBirth'].dirty)">
                 <small class="text-red-500" *ngIf="fc['dateOfBirth'].errors?.['required']">*Date of birth is
                   required!</small>
-                <small class="text-red-500" *ngIf="fc['dateOfBirth'].errors['pattern'] ">*Date of birth must be in the
-                  pattern of (DD-MM-YYY)</small>
+                <small class="text-red-500" *ngIf="fc['dateOfBirth'].errors['pattern'] ">*Date of birth must be in the pattern of (DD-MM-YYY)</small>
               </div>
             </div>
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-1/2">
+            <label class="text-base" for="">Phone number</label>
               <input formControlName="phone" class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400"
                 type="number" name="" id="" placeholder="Phone Number">
-              <div *ngIf="fc['phone'].errors && (fc['phone'].touched ||  fc['phone'].dirty)">
-                <small class="text-red-500" *ngIf="fc['phone'].errors?.['required']">*Phone number is
-                  required!</small>
-                <small class="text-red-500" *ngIf="fc['phone'].errors['pattern'] ">*Number must be 10 digits</small>
-              </div>
+                <div *ngIf="fc['phone'].errors && (fc['phone'].touched ||  fc['phone'].dirty)">
+                  <small class="text-red-500" *ngIf="fc['phone'].errors?.['required']">*Phone number is
+                    required!</small>
+                  <small class="text-red-500" *ngIf="fc['phone'].errors['pattern'] ">*Number must be 10 digits</small>
+                </div>
             </div>
             <div class="w-1/2">
+            <label class="text-base"  for="">Email id</label>
               <input formControlName="email" class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400"
                 type="email" placeholder="Email">
-
               <div *ngIf="fc['email'].errors && (fc['email'].touched || fc['email'].dirty)">
                 <small class="text-red-500"
                   *ngIf="fc['email'].errors && (fc['email'].touched || fc['email'].dirty)">*email is required!</small>
@@ -78,6 +82,7 @@
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-full">
+            <label class="text-base" for="">AddreeeLine2</label>
               <input formControlName="adderssLine1"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name="" id=""
                 placeholder="Address Line1">
@@ -89,6 +94,7 @@
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-full">
+            <label class="text-base" for=""> AddressLine2</label>
               <input formControlName="adderssLine2"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name="" id=""
                 placeholder="Address Line2">
@@ -100,6 +106,7 @@
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-1/2">
+            <label class="text-base" for="">Street name</label>
               <input formControlName="street"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text" name="" id=""
                 placeholder="Street">
@@ -108,6 +115,7 @@
                 required!</small>
             </div>
             <div class="w-1/2">
+            <label class="text-base" for=""> Distric name</label>
               <input formControlName="distric"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
                 placeholder="Distric">
@@ -118,6 +126,7 @@
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-1/2">
+            <label class="text-base" for="">State name</label>
               <input formControlName="state" class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400"
                 type="text" name="" id="" placeholder="State">
               <small class="text-red-500"
@@ -125,6 +134,7 @@
                 required!</small>
             </div>
             <div class="w-1/2">
+            <label class="text-base" for="">Country name</label>
               <input formControlName="country"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
                 placeholder="Country">
@@ -135,6 +145,7 @@
           </div>
           <div class="flex w-[100%] sm:gap-4 gap-2">
             <div class="w-1/2">
+            <label class="text-base" for="">Pincode</label>
               <input formControlName="pincode"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="number" name="" id=""
                 placeholder="Pincode">
@@ -143,20 +154,19 @@
                 required!</small>
             </div>
             <div class="w-1/2">
+            <label class="text-base" for="">Date of Joining</label>
               <input formControlName="dateOfJoing"
                 class="p-2 ring-1 outline-none w-full bg-slate-50 rounded-md ring-zinc-400" type="text"
                 placeholder="Date of Joing">
-              <div *ngIf="fc['dateOfJoing'].errors && (fc['dateOfJoing'].touched ||  fc['dateOfJoing'].dirty)">
-                <small class="text-red-500" *ngIf="fc['dateOfJoing'].errors?.['required']">*Date of birth is
-                  required!</small>
-                <small class="text-red-500" *ngIf="fc['dateOfJoing'].errors['pattern'] ">*Date of birth must be in the
-                  pattern of (DD-MM-YYY)</small>
-              </div>
+                <div *ngIf="fc['dateOfJoing'].errors && (fc['dateOfJoing'].touched ||  fc['dateOfJoing'].dirty)">
+                  <small class="text-red-500" *ngIf="fc['dateOfJoing'].errors?.['required']">*Date of birth is
+                    required!</small>
+                  <small class="text-red-500" *ngIf="fc['dateOfJoing'].errors['pattern'] ">*Date of birth must be in the pattern of (DD-MM-YYY)</small>
+                </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="lg:w-3/12 w-full flex bg-cover items-center justify-center py-5 bg-center bg-no-repeat text-white">
         <div class="p-2 md:p-5 w-[80%] h-full flex flex-col justify-center items-center py-12 rounded-md">
           <div class="relative">
@@ -173,7 +183,7 @@
       </div>
     </div>
     <h1 class="text-center mt-4 space-x-5">
-      <button routerLink="/" class="hover:bg-red-600 text-white p-5  rounded-full px-8 bg-blue-700">
+      <button routerLink="/" class="hover:bg-red-600 text-white p-5 rounded-full px-8 bg-blue-700">
         <i class="fa-solid hover:scale-125 text-xl fa-xmark"></i>
       </button>
     </h1>
